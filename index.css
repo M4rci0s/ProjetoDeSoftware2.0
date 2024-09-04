@@ -1,0 +1,421 @@
+/* Já existente */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #101A71;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,45,117,1) 0%, rgba(0,122,255,1) 73%, rgba(0,212,255,1) 100%);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+/* Alinha o texto do ul à esquerda */
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+nav ul li a.btn-cadastro {
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: white;
+    color: #007AFF;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    justify-content: flex-start; /* Alinha à esquerda */
+    align-items: center;
+    height: calc(100vh - 60px);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,45,117,1) 0%, rgba(0,122,255,1) 73%, rgba(0,212,255,1) 100%);
+    padding-left: 20px; /* Adiciona espaço à esquerda */
+}
+
+.hero {
+    text-align: left; /* Alinha o texto à esquerda */
+    
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero .btn-encontrar {
+    padding: 15px 30px;
+    background-color: white;
+    color: #007AFF;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.services {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #030726;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.services p {
+    font-size: 18px;
+    color: #999;
+    margin-bottom: 50px;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Alinha os itens com espaço igual entre eles */
+    gap: 30px;
+}
+
+.service-item {
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33.33% - 30px); /* Define a largura para 33.33% menos o espaço de gap */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box; /* Inclui o padding na largura total do item */
+}
+
+@media screen and (max-width: 992px) {
+    .service-item {
+        width: calc(50% - 30px); /* Ajusta para 2 por fileira em telas menores */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .service-item {
+        width: 100%; /* Ajusta para 1 por fileira em telas pequenas */
+    }
+}
+
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #b0b0b0;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.quem-somos {
+    background-color: #0A0F7D;
+    padding: 50px 20px;
+    text-align: center;
+    color: white;
+}
+
+.quem-somos h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #5C60D6; /* Linha abaixo do título */
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.quem-somos p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #CCCCFF; /* Um cinza claro para o texto */
+}
+
+.cta-tecnico {
+    background-color: #FFFFFF;
+    color: #101A71;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cta-tecnico h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.faq-section {
+    display: flex;
+    justify-content: flex-start; /* Alinha a seção à esquerda */
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    text-align: left;
+    flex: 1;
+}
+
+.faq-left h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.faq-left p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contact-button {
+    background-color: #427bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.faq-questions {
+    flex: 1;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha as perguntas à esquerda */
+}
+
+.faq-item {
+    background-color: #2f3a8c;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%; /* Faz com que cada item ocupe toda a largura disponível */
+}
+
+.faq-item label {
+    font-size: 18px;
+    cursor: pointer;
+    display: block;
+}
+
+.faq-item input[type="checkbox"] {
+    display: none;
+}
+
+.faq-item input[type="checkbox"] + label::after {
+    content: "+";
+    float: right;
+}
+
+.faq-item input[type="checkbox"]:checked + label::after {
+    content: "-";
+}
+footer {
+    background-color: #131b50;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-subscribe {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.footer-subscribe input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.subscribe-button {
+    background-color: #427bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os links */
+    flex-wrap: wrap; /* Permite que os links quebrem em linhas, se necessário */
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.subscribe p {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.subscribe form {
+    display: flex;
+    gap: 10px;
+}
+
+.subscribe input[type="email"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 200px;
+}
+
+.subscribe button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscribe button:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #fff;
+    margin: 20px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaçamento entre os links */
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.faq-item {
+    background-color: #101A71;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    color: #ccc;
+    font-size: 16px;
+}
+
+.plus-icon {
+    font-size: 18px;
+    color: #fff;
+}

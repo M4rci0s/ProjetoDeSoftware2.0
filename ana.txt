@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Preciso de um técnico</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Contato</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Opção 1</a></li>
+                            <li><a href="#">Opção 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="auth-links">
+                <a href="#">Faça login</a>
+                <a href="#" class="cadastre-se">Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção de Técnicos Disponíveis -->
+    <section class="tecnicos-disponiveis">
+        <div class="container">
+            <h1>Técnicos disponíveis</h1>
+            <p>Aqui encontra-se os melhores técnicos para você</p>
+
+            <div class="filtro">
+                <button>Filtro</button>
+            </div>
+
+            <div class="tecnico-card">
+                <h2>Técnico 01</h2>
+                <h5>Descrição do técnico</h5>
+                <div class="descricao-profissional">
+                    <p>Lorem ipsum dolor sit amet. Et temporibus consequatur et amet sapiente cum provident nostrum est quae nesciunt eos modi voluptatum aut unde itaque ut quidem repellat. Non consequatur temporibus est expedita voluptatibus qui deserunt quae.</p>
+                </div>
+                <div class="informacoes">
+                    <img src="icone_localizacao.png" alt="Localização" class="icone-localizacao">
+                    <span>Localização:</span> 
+                    <span>Avaliação:</span> 
+                    <span class="estrelas">★★★★★</span>
+                    <a href="#" class="contratar">Contratar <img src="seta-direita.png" alt="Seta" class="icone-seta"></a>
+                </div>
+            </div>
+
+            <div class="tecnico-card">
+                <h2>Técnico 02</h2>
+                <h5>Descrição do técnico</h5>
+                <div class="descricao-profissional">
+                    <p>Lorem ipsum dolor sit amet. Et temporibus consequatur et amet sapiente cum provident nostrum est quae nesciunt eos modi voluptatum aut unde itaque ut quidem repellat. Non consequatur temporibus est expedita voluptatibus qui deserunt quae.</p>
+                </div>
+                <div class="informacoes">
+                    <img src="icone_localizacao.png" alt="Localização" class="icone-localizacao">
+                    <span>Localização:</span> 
+                    <span>Avaliação:</span> 
+                    <span class="estrelas">★★★★☆</span>
+                    <a href="#" class="contratar">Contratar <img src="seta-direita.png" alt="Seta" class="icone-seta"></a>
+                </div>
+            </div>
+            <div class="tecnico-card">
+                <h2>Técnico 03</h2>
+                <h5>Descrição do técnico</h5>
+                <div class="descricao-profissional">
+                    <p>Lorem ipsum dolor sit amet. Et temporibus consequatur et amet sapiente cum provident nostrum est quae nesciunt eos modi voluptatum aut unde itaque ut quidem repellat. Non consequatur temporibus est expedita voluptatibus qui deserunt quae.</p>
+                </div>
+                <div class="informacoes">
+                    <img src="icone_localizacao.png" alt="Localização" class="icone-localizacao">
+                    <span>Localização:</span> 
+                    <span>Avaliação:</span> 
+                    <span class="estrelas">★★★☆☆</span>
+                    <a href="#" class="contratar">Contratar <img src="seta-direita.png" alt="Seta" class="icone-seta"></a>
+                </div>
+            </div>
+
+            <div class="tecnico-card">
+                <h2>Técnico 04</h2>
+                <h5>Descrição do técnico</h5>
+                <div class="descricao-profissional">
+                    <p>Lorem ipsum dolor sit amet. Et temporibus consequatur et amet sapiente cum provident nostrum est quae nesciunt eos modi voluptatum aut unde itaque ut quidem repellat. Non consequatur temporibus est expedita voluptatibus qui deserunt quae.</p>
+                </div>
+                <div class="informacoes">
+                    <img src="icone_localizacao.png" alt="Localização" class="icone-localizacao">
+                    <span>Localização:</span> 
+                    <span>Avaliação:</span> 
+                    <span class="estrelas">★★★☆☆</span>
+                    <a href="#" class="contratar">Contratar <img src="seta-direita.png" alt="Seta" class="icone-seta"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="convite-inscricao">
+        <div class="container">
+            <button class="ver-mais">Ver Mais</button>
+            <div class="convite-texto">
+                <h2>Faça parte da (empresa) como Técnico</h2>
+                <a href="#" class="cadastre-se">Cadastre-se</a>
+            </div>
+        </div>
+    </section>
+
+
+        <div class="faq-container">
+            <div class="faq-title">
+                <h2>Dúvidas?</h2>
+                <p>Para qualquer dúvida, <a href="link-de-contato.html">contate-nos</a>.</p>
+            </div>
+        
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <span>A (empresa) é segura?</span>
+                        <span class="plus-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, a (empresa) oferece diversas garantias para que todos os serviços sejam realizados com segurança e qualidade.</p>
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <span>Quais tipos de serviço posso encontrar na (empresa)?</span>
+                        <span class="plus-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Na (empresa), você encontra uma variedade de serviços que atendem diferentes necessidades, incluindo suporte técnico, manutenção e muito mais.</p>
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <span>Como posso encontrar um técnico na (empresa)?</span>
+                        <span class="plus-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você pode encontrar um técnico utilizando a nossa ferramenta de busca na plataforma. Basta inserir sua localização e o tipo de serviço que precisa.</p>
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <span>Qual o custo de ser um parceiro da (empresa)?</span>
+                        <span class="plus-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O custo para ser um parceiro da (empresa) depende do tipo de parceria. Para mais detalhes, recomendamos entrar em contato conosco.</p>
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <span>Há serviços em domicílio?</span>
+                        <span class="plus-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, a (empresa) oferece serviços em domicílio para várias categorias, facilitando o atendimento em sua casa ou empresa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-links">
+                <a href="#">Preciso de um técnico</a>
+                <a href="#">Trabalhe conosco</a>
+                <a href="#">Contato</a>
+                <a href="#">Quem Somos?</a>
+            </div>
+            <div class="subscribe">
+                <p>Se inscreva</p>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Cadastrar-se</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <nav class="footer-nav">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Configuração dos Cookies</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+//<table>
+    <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Email</th>
+     
+    </tr>
+    <tr>
+        <td>{{ $valor->nome }}</td>
+        <td>{{ $valor->sobrenome }}</td>
+        <td>{{ $valor->email }}</td>
+    </tr>
+
+    
+    @endforeach
+</table>
