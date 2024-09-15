@@ -16,12 +16,12 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nome');
             $table->string('sobrenome');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('cpf');
             $table->string('senha');
             $table->string('senhaconf');
         });
-    } 
+    }
 
     /**
      * Reverse the migrations.

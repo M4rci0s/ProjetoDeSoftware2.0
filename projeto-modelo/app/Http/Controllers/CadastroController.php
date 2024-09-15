@@ -41,8 +41,8 @@ class CadastroController extends Controller
         $usuario->sobrenome = $req->sobrenome;
         $usuario->email = $req->email;
         $usuario->cpf = $req->cpf;
-        $usuario->senha = $req->senha;
-        $usuario->senhaconf = $req->senhaconf;
+        $usuario->senha = bcrypt($req->senha);
+        $usuario->senhaconf = bcrypt($req->senhaconf);
         $usuario->save();
 
         return redirect('/');
