@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faça Login</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* Estilos gerais */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(2, 45, 117, 1) 0%,
+          rgba(0, 122, 255, 1) 73%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        color: white;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #081590;
+        width: 100%;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+        align-items: center; /* Alinha os itens verticalmente */
+      }
+
+      /* Alinha o texto do ul à esquerda */
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+      }
+
+      nav ul li a.btn-cadastro {
+        padding: 8px 15px;
+        border-radius: 20px;
+        background-color: white;
+        color: #007aff;
+        font-weight: bold;
+      }
+      /* Centralização do conteúdo principal */
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-grow: 1;
+        width: 100%;
+        flex-direction: column;
+      }
+
+      /* Estilização do título "Faça Login" */
+      h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+
+      /* Estilização do formulário */
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Espaçamento entre os elementos do formulário */
+        width: 100%;
+      }
+
+      label {
+        font-size: 16px;
+        margin-bottom: 2px;
+        text-align: left;
+        width: 300px; /* Mesma largura que os inputs */
+      }
+
+      input {
+        display: block;
+        width: 300px;
+        padding: 15px;
+        margin: 0 auto;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+      }
+
+      /* Estilização do botão */
+      button {
+        padding: 10px 50px;
+        background-color: #001a4d;
+        color: white;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      footer {
+        background-color: #081590;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .footer-links a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .footer-subscribe {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .footer-subscribe input[type="email"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+      }
+
+      .subscribe-button {
+        background-color: #427bff;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 20px; /* Espaçamento entre os links */
+        flex-wrap: wrap; /* Permite que os links quebrem em linhas, se necessário */
+      }
+
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      .subscribe {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .subscribe p {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+      }
+
+      .subscribe form {
+        display: flex;
+        gap: 10px;
+      }
+
+      .subscribe input[type="email"] {
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        width: 200px;
+      }
+
+      .subscribe button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .subscribe button:hover {
+        background-color: #0056b3;
+      }
+
+      hr {
+        border: 0;
+        border-top: 1px solid #fff;
+        margin: 20px 0;
+      }
+
+      .footer-bottom {
+        text-align: center;
+      }
+
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px; /* Espaçamento entre os links */
+        margin-bottom: 10px;
+      }
+
+      .footer-nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .footer-nav a:hover {
+        text-decoration: underline;
+      }
+
+      .faq-item {
+        background-color: #101a71;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .faq-answer {
+        display: none;
+        margin-top: 10px;
+        color: #ccc;
+        font-size: 16px;
+      }
+
+      .plus-icon {
+        font-size: 18px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <span>Logo</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Preciso de um técnico</a></li>
+          <li><a href="#">Trabalhe conosco</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Faça login</a></li>
+          <li><a href="#" class="btn-cadastro">Cadastre-se</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="login-container">
+        <h1>Faça Login</h1>
+        <form action="#">
+          <label for="username">Nome do usuário</label>
+          <input type="text" id="username" placeholder="" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="" required />
+
+          <button type="submit">Logar</button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-links">
+          <a href="#">Preciso de um técnico</a>
+          <a href="#">Trabalhe conosco</a>
+          <a href="#">Contato</a>
+          <a href="#">Quem Somos?</a>
+        </div>
+        <div class="subscribe">
+          <p>Se inscreva</p>
+          <form action="#">
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit">Cadastrar-se</button>
+          </form>
+        </div>
+      </div>
+      <hr />
+      <div class="footer-bottom">
+        <nav class="footer-nav">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+          <a href="#">Configuração dos Cookies</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
+
+/* <!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+  </head>
+
+  <body>
+    <h2>Login</h2>
+
+    @if ($errors->any())
+    <div>
+      <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
+
+    <form method="POST" action="{{ route('login') }}">
+      @csrf
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value="{{ old('email') }}"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <div>
+        <button type="submit">Entrar</button>
+      </div>
+    </form>
+  </body>
+</html>
+*/

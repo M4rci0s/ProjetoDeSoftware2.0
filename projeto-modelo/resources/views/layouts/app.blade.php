@@ -19,7 +19,7 @@
         body {
             width: 100%;
             background-color: #35AD5E;
-            
+
 
         }
 
@@ -155,7 +155,7 @@
             color: #B22222;
         }
 
-        .container{
+        .container {
             padding-left: 5%;
             padding-top: 2%;
         }
@@ -178,7 +178,7 @@
                     <li><a href="trabalhe.html">Trabalhe conosco</a></li>
                     <li><a href="upload">Contato</a></li>
                     <li><a href="upload">Perfil</a></li>
-                    <li><a href="login.html">Faça login</a></li>
+                    <li><a href="login">Faça login</a></li>
                     <li><a href="/create"><button id="cadastre">Cadastre-se</button></a></li>
                 </ul>
 

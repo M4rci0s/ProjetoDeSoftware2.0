@@ -407,6 +407,7 @@
         padding: 20px 0;
         color: #fff;
         margin-top: auto;
+        width: 1500px;
         /* Para o rodapé fixar no fim */
     }
 
@@ -424,6 +425,10 @@
         /* Espaçamento entre os links */
         flex-wrap: wrap;
         /* Permite que os links quebrem em linhas, se necessário */
+    }
+
+    .footer {
+        width: 100%;
     }
 
     .footer-links a {
@@ -532,6 +537,7 @@
 <!-- Seção de Técnicos Disponíveis -->
 <section class="tecnicos-disponiveis">
     <div class="container">
+
         <h1>Técnicos disponíveis</h1>
         <p>Aqui encontra-se os melhores técnicos para você</p>
 
@@ -561,7 +567,7 @@
                 <span>Localização:</span>
                 <span>Avaliação:</span>
                 <span class="estrelas">★★★★★</span>
-                <a href="#" class="contratar">Contratar <img src="seta-direita.png" alt="Seta" class="icone-seta"></a>
+                <a href="{{ route('contrato.detalhes', $valor->id) }}" class="contratar">Contratar <img src="seta-direita.png" alt="Seta" class="icone-seta"></a>
             </div>
         </div>
 
