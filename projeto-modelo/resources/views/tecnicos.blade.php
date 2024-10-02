@@ -114,7 +114,6 @@
         background-color: #0056b3;
     }
 
-
     .tecnicos-disponiveis {
         padding: 40px 20px;
         background-color: #030726;
@@ -226,7 +225,8 @@
     }
 
     .informacoes .estrelas {
-        color: #4CAF50;
+        color: #FFD700;
+        /* Cor dourada para as estrelas */
         font-weight: bold;
     }
 
@@ -541,7 +541,6 @@
         <h1>Técnicos disponíveis</h1>
         <p>Aqui encontra-se os melhores técnicos para você</p>
 
-
         <div class="filtro">
             <form action="{{ route('searchTecnico') }}" method="GET" style="display: flex; gap: 10px; flex: 1;">
                 <input type="text" name="query" placeholder="Digite o nome do técnico..." value="{{ request('query') }}" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100%;">
@@ -550,35 +549,67 @@
             <form action="{{ route('searchTecnico') }}" method="GET" style="margin-top: 10px;">
                 <button type="submit" style="background-color: #ff4d4d; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Limpar Filtro</button>
             </form>
-
-
         </div>
 
+        <!-- Mensagem de Sucesso -->
+        @if(session('success'))
+        <div style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-top: 10px;">
+            {{ session('success') }}
+        </div>
+        @endif
 
+        <!-- Loop para listar os técnicos -->
         @foreach($valores as $valor)
         <div class="tecnico-card">
             <h2>{{ $valor->nome }}</h2>
             <h5>Descrição do técnico</h5>
             <div class="descricao-profissional">
-                <p>Lorem ipsum dolor sit amet. Et temporibus consequatur et amet sapiente cum provident nostrum est quae nesciunt eos modi voluptatum aut unde itaque ut quidem repellat. Non consequatur temporibus est expedita voluptatibus qui deserunt quae.</p>
+                <p>{{ $valor->descricao }}</p>
             </div>
             <div class="informacoes">
                 <img src="icone_localizacao.png" alt="Localização" class="icone-localizacao">
-                <span>Localização:</span>
+                <span>Localização: {{ $valor->localizacao }}</span>
                 <span>Avaliação:</span>
-                <span class="estrelas">★★★★★</span>
+                <span class="estrelas">
+                    @for ($i = 1; $i <= 5; $i++)
+                        @if($valor->rating >= $i)
+                        ★
+                        @elseif($valor->rating > ($i - 1) && $valor->rating < $i)
+                            <!-- Para meia estrela, você pode personalizar conforme desejar -->
+                            ☆
+                            @else
+                            ☆
+                            @endif
+                            @endfor
+                            ({{ number_format($valor->rating, 1) }} de 5)
+                </span>
                 <a href="{{ route('contrato.detalhes', $valor->id) }}" class="contratar">Contratar <img src="seta-direita.png" alt="Seta" class="icone-seta"></a>
             </div>
+
+            <!-- Formulário para Avaliar o Técnico -->
+            <div class="avaliar-tecnico">
+                <form action="{{ route('rating.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="tecnico_id" value="{{ $valor->id }}">
+                    <label for="rating_{{ $valor->id }}">Sua Avaliação:</label>
+                    <select name="rating" id="rating_{{ $valor->id }}" required>
+                        <option value="">Selecione</option>
+                        <option value="1">1 estrela</option>
+                        <option value="2">2 estrelas</option>
+                        <option value="3">3 estrelas</option>
+                        <option value="4">4 estrelas</option>
+                        <option value="5">5 estrelas</option>
+                    </select>
+                    <button type="submit">Enviar Avaliação</button>
+                </form>
+            </div>
+
         </div>
-
         @endforeach
-
 
     </div>
 
 </section>
-
-
 
 <section class="convite-inscricao">
     <div class="container">
@@ -589,7 +620,6 @@
         </div>
     </div>
 </section>
-
 
 <div class="faq-container">
     <div class="faq-title">
@@ -650,7 +680,6 @@
     </div>
 </div>
 
-
 <footer>
     <div class="footer-top">
         <div class="footer-links">
@@ -671,7 +700,7 @@
     <div class="footer-bottom">
         <nav class="footer-nav">
             <a href="#">Política de Privacidade</a>
-            <a href="#">Termos de Uso</a>
+            <a href="/termos-de-uso">Termos de Uso</a>
             <a href="#">Configuração dos Cookies</a>
         </nav>
     </div>
@@ -685,10 +714,9 @@
         // Toggle the visibility of the answer
         answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
 
-        // Toggle the icon between "+" and "-"
+        // Toggle the icon between "+" e "-"
         icon.textContent = icon.textContent === '+' ? '-' : '+';
     }
 </script>
-
 
 @endsection

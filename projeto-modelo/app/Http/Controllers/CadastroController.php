@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cadastro;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 
 class CadastroController extends Controller
@@ -41,8 +43,12 @@ class CadastroController extends Controller
         $usuario->sobrenome = $req->sobrenome;
         $usuario->email = $req->email;
         $usuario->cpf = $req->cpf;
-        $usuario->senha = bcrypt($req->senha);
-        $usuario->senhaconf = bcrypt($req->senhaconf);
+        $usuario->save();
+
+        $usuario = new User();
+        $usuario->password = Hash::make($req->senha);
+        $usuario->email = $req->email;
+        $usuario->name = $req->name;
         $usuario->save();
 
         return redirect('/');
