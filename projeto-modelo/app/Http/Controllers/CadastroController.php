@@ -39,7 +39,7 @@ class CadastroController extends Controller
     public function store(Request $req)
     {
         $usuario = new Cadastro();
-        $usuario->nome = $req->nome;
+        $usuario->name = $req->name;
         $usuario->sobrenome = $req->sobrenome;
         $usuario->email = $req->email;
         $usuario->cpf = $req->cpf;

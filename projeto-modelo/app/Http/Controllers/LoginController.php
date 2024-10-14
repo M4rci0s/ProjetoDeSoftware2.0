@@ -9,7 +9,12 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function login(Request $request)
+    public function login()
+    {
+        return view("login1");
+    }
+
+    public function authenticate(Request $request)
     {
         // Validação dos dados do formulário de login
         $credentials = $request->validate([
@@ -22,14 +27,12 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             // Redireciona para o dashboard se autenticado
-            return redirect()->intended('dashboard');
+            return redirect()->intended('uploadimg');
         }
 
         // Se falhar a autenticação, retorna com erro
         return back()->withErrors([
-            'email' => 'As credenciais não correspondem aos nossos registros.',
-        ]);
-
-        return view('login1');
+            'email' => 'As credenciais fornecidas estão incorretas.',
+        ])->onlyInput('email');
     }
 }

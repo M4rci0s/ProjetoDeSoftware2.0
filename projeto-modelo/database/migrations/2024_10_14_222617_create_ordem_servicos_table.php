@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cadastros', function (Blueprint $table) {
+        Schema::create('ordem_servicos', function (Blueprint $table) {
             $table->id();
+            $table->integer("tecnico_id");
+            $table->string("servicos_executados");
+            $table->integer("nota")->nullable();
             $table->timestamps();
-            $table->string('name');
-            $table->string('sobrenome');
-            $table->string('email')->unique();
-            $table->string('cpf');
         });
     }
 
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cadastros');
+        Schema::dropIfExists('ordem_servicos');
     }
 };

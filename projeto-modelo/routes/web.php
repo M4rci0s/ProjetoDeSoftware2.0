@@ -10,6 +10,7 @@ use App\Http\Controllers\TecnicoController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\TermosController;
 use App\Models\Tecnico;
+use App\Http\Controllers\OrdemServicosController;
 
 
 Route::get('/', [CadastroController::class, 'index']);
@@ -37,8 +38,14 @@ Route::get('/termos-de-uso', [TermosController::class, 'index'])->name('termos.d
 
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/uploadimg', function () {
+    return view('uploadimg');
 })->middleware('auth');
+
+
+
+Route::get('/', [OrdemServicosController::class, 'index']);
+Route::post('/avaliar', [OrdemServicosController::class, 'avaliar']);
+Route::get('/media', [OrdemServicosController::class, 'media']);

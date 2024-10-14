@@ -20,12 +20,10 @@
         <th>Excluir Conta</th>
     </tr>
     <tr>
-        <td>{{ $valor->nome }}</td>
+        <td>{{ $valor->name }}</td>
         <td>{{ $valor->sobrenome }}</td>
         <td>{{ $valor->email }}</td>
-        <td>{{ $valor->cpf }}</td>
-        <td>{{ $valor->senha }}</td>
-        <td>{{ $valor->senhaconf }}</td>
+        <td>{{ $valor->cpf }}</td>>
 
         <td>
             <form action="/delete" method="post" id="form-delete-{{ $valor->id }}">

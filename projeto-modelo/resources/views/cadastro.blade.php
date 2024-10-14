@@ -145,7 +145,7 @@
     <div class="flex">
         @csrf
         <label>
-            <input required="" placeholder="" type="text" class="input" name="nome">
+            <input required="" placeholder="" type="text" class="input" name="name">
             <span>Nome</span>
         </label>
 
@@ -172,7 +172,7 @@
         <input required="" placeholder="" type="password" class="input" name="senhaconf">
         <span>Confirme a senha</span>
     </label>
- 
+
 
     <button class="submit">Cadastrar</button>
     <p class="signin">Possui uma conta ? <a href="#">Logar</a> </p>

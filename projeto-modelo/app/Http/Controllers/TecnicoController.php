@@ -24,4 +24,4 @@ class TecnicoController extends Controller
         $tecnico = Cadastro::find($id);
         return view('contrato', compact('tecnico'));
     }
-}
+} 
