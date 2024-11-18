@@ -7,7 +7,6 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        max-width: 338px;
         background-color: #fff;
         padding: 20px;
         border-radius: 20px;
@@ -69,7 +68,6 @@
 
     .flex {
         display: flex;
-        width: 100%;
         gap: 6px;
     }
 

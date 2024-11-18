@@ -20,11 +20,6 @@
         color: #fff;
     }
 
-    header {
-        background-color: #101A71;
-        /* Fundo do cabeçalho */
-        padding: 15px 20px;
-    }
 
     .container {
         display: flex;
@@ -32,6 +27,8 @@
         align-items: center;
         flex-direction: column;
         color: #fff;
+        width: 100%;
+        min-width: 90vh;
     }
 
     .logo a {
@@ -118,10 +115,11 @@
         padding: 40px 20px;
         background-color: #030726;
         color: #fff;
+        min-width: 90vh;
     }
 
     .tecnicos-disponiveis .container {
-        max-width: 1200px;
+        max-width: 1080px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -363,7 +361,7 @@
         border-radius: 10px;
         width: 100%;
         /* Ocupa toda a largura disponível */
-        max-width: 600px;
+        max-width: 100%;
         /* Define uma largura máxima para se igualar aos cards */
         display: flex;
         justify-content: space-between;
@@ -401,137 +399,6 @@
     }
 
     /* Estilos do Rodapé */
-    footer {
-        background-color: #101A71;
-        /* Fundo do rodapé */
-        padding: 20px 0;
-        color: #fff;
-        margin-top: auto;
-        width: 1500px;
-        /* Para o rodapé fixar no fim */
-    }
-
-    .footer-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 20px;
-        width: 100%;
-    }
-
-    .footer-links {
-        display: flex;
-        gap: 20px;
-        /* Espaçamento entre os links */
-        flex-wrap: wrap;
-        /* Permite que os links quebrem em linhas, se necessário */
-    }
-
-    .footer {
-        width: 100%;
-    }
-
-    .footer-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-    }
-
-    .footer-links a:hover {
-        text-decoration: underline;
-    }
-
-    .subscribe {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .subscribe p {
-        margin: 0 0 10px 0;
-        font-size: 16px;
-    }
-
-    .subscribe form {
-        display: flex;
-        gap: 10px;
-    }
-
-    .subscribe input[type="email"] {
-        padding: 8px;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        width: 200px;
-    }
-
-    .subscribe button {
-        background-color: #007bff;
-        color: #fff;
-        padding: 8px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .subscribe button:hover {
-        background-color: #0056b3;
-    }
-
-    hr {
-        border: 0;
-        border-top: 1px solid #fff;
-        margin: 20px 0;
-    }
-
-    .footer-bottom {
-        text-align: center;
-    }
-
-    .footer-nav {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        /* Espaçamento entre os links */
-        margin-bottom: 10px;
-    }
-
-    .footer-nav a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .footer-nav a:hover {
-        text-decoration: underline;
-    }
-
-    .faq-item {
-        background-color: #101A71;
-        padding: 15px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        width: 600px;
-    }
-
-    .faq-question {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .faq-answer {
-        display: none;
-        margin-top: 10px;
-        color: #ccc;
-        font-size: 16px;
-    }
-
-    .plus-icon {
-        font-size: 18px;
-        color: #fff;
-    }
 </style>
 
 <!-- Seção de Técnicos Disponíveis -->
@@ -561,7 +428,7 @@
         <!-- Loop para listar os técnicos -->
         @foreach($valores as $valor)
         <div class="tecnico-card">
-            <h2>{{ $valor->nome }}</h2>
+            <h2>{{ $valor->name }}</h2>
             <h5>Descrição do técnico</h5>
             <div class="descricao-profissional">
                 <p>{{ $valor->descricao }}</p>
@@ -680,31 +547,7 @@
     </div>
 </div>
 
-<footer>
-    <div class="footer-top">
-        <div class="footer-links">
-            <a href="#">Preciso de um técnico</a>
-            <a href="#">Trabalhe conosco</a>
-            <a href="#">Contato</a>
-            <a href="#">Quem Somos?</a>
-        </div>
-        <div class="subscribe">
-            <p>Se inscreva</p>
-            <form action="#">
-                <input type="email" placeholder="Enter your email">
-                <button type="submit">Cadastrar-se</button>
-            </form>
-        </div>
-    </div>
-    <hr>
-    <div class="footer-bottom">
-        <nav class="footer-nav">
-            <a href="#">Política de Privacidade</a>
-            <a href="/termos-de-uso">Termos de Uso</a>
-            <a href="#">Configuração dos Cookies</a>
-        </nav>
-    </div>
-</footer>
+
 
 <script>
     function toggleAnswer(element) {

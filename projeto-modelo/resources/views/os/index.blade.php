@@ -15,6 +15,10 @@
             border: 1px solid #000;
             padding: .5rem;
         }
+
+        body {
+            background-color: #030726;
+        }
     </style>
 </head>
 

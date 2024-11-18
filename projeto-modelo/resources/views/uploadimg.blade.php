@@ -1,99 +1,186 @@
 @extends('layouts.app')
 
 @section('conteudo')
-
 <style>
-    img {
-        width: 100px;
+    .container {
+
+        min-height: 74.8vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
     }
 
-    button {
-        background-color: #F7F7F7;
-        color: #35AD5E;
-        border-radius: 14px;
-        border: none;
-        padding: 10px 20px 10px 20px;
-        text-align: center;
-        cursor: pointer;
-        background-repeat: no-repeat;
-        font-size: 15px;
-        font-weight: 700;
-        transition: 0.3s ease;
+    .formulario {
+        position: relative;
+        padding: 10px;
+        max-width: 500px;
+        height: auto;
+        min-height: 50vh;
+        width: 100%;
+        background: #fff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        margin-top: 5.5%;
+        margin-bottom: 5.5%;
     }
 
-
-    #btnArq {
-        background-color: #35AD5E;
-        color: #F7F7F7;
-        border-radius: 14px;
-        border: none;
-        padding: 10px 20px 10px 20px;
+    .formulario header {
+        font-size: 1.2rem;
+        color: #000;
+        font-weight: 600;
         text-align: center;
-        cursor: pointer;
-        background-repeat: no-repeat;
-        font-size: 15px;
-        font-weight: 700;
-        transition: 0.3s ease;
     }
 
-    input {
-        background-color: #35AD5E;
-        color: #F7F7F7;
-        border-radius: 14px;
-        border: none;
-        padding: 10px 20px 10px 20px;
-        text-align: center;
-        cursor: pointer;
-        background-repeat: no-repeat;
-        font-size: 15px;
-        font-weight: 700;
-        transition: 0.3s ease;
+    .formulario .form {
+        margin-top: 15px;
     }
 
-    #file-upload-button {
-        background-color: #35AD5E;
-        color: #F7F7F7;
-        border-radius: 14px;
+    .form .input-box {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .input-box label {
+        color: #000;
+    }
+
+    .form :where(.input-box input, .select-box) {
+        position: relative;
+        height: 35px;
+        width: 100%;
+        outline: none;
+        font-size: 1rem;
+        color: #000;
+        margin-top: 5px;
+        border: 1px solid rgba(105, 105, 105, 0.397);
+        border-radius: 6px;
+        padding: 0 15px;
+        background: #fff;
+    }
+
+    .input-box input:focus {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .form .column {
+        display: flex;
+        column-gap: 15px;
+    }
+
+    .form .gender-box {
+        margin-top: 10px;
+    }
+
+    .form :where(.gender-option, .gender) {
+        display: flex;
+        align-items: center;
+        column-gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .address :where(input, .select-box) {
+        margin-top: 10px;
+    }
+
+    .select-box select {
+        height: 100%;
+        width: 100%;
+        outline: none;
         border: none;
-        padding: 10px 20px 10px 20px;
-        text-align: center;
+        color: #fff;
+        font-size: 1rem;
+        background: #030726;
+    }
+
+    .form button {
+        height: 40px;
+        width: 100%;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-top: 15px;
+        border: none;
+        border-radius: 6px;
         cursor: pointer;
-        background-repeat: no-repeat;
-        font-size: 15px;
-        font-weight: 700;
-        transition: 0.3s ease;
+        transition: all 0.2s ease;
+        background: #030726;
+    }
+
+    .form button:hover {
+        background: #030744;
     }
 </style>
 
 
-@if(session('success'))
-<p>{{ session('success') }}</p>
-@endif
-@if(session('error'))
-<p>{{ session('error') }}</p>
-@endif
+<section class="container">
+    <nav class="formulario">
+        <h4>Editar perfil</h4>
+        <form class="form" action="POST">
 
-@if(isset($imagePath))
+            <div class="input-box">
+                <label>Foto de Perfil</label>
+                <input required="" type="file" accept="image/*" id="photoInput" onchange="previewImage(event)">
+            </div>
 
-<img src="{{ asset($imagePath) }}" style="max-width: 100%; height: auto;">
-@endif
+            <div class="image-preview" id="imagePreview" style="display: none;">
+                <h5>Pré-visualização da Foto:</h5>
+                <img id="preview" src="" alt="Pré-visualização da foto" style="max-width: 200px; max-height: 200px;" />
+            </div>
 
-<form action="{{ url('upload') }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    <input id="btnArq" type="file" name="photo" accept="image/*" required>
-    <button type="submit">Enviar Foto</button>
-</form>
+            <div class="input-box">
+                <label>Nome e Sobrenome</label>
+                <input required="" placeholder="Digite o Nome completo" type="text">
+            </div>
+            <div class="input-box">
+                <label>Email profissional</label>
+                <input required="" placeholder="Insira um email" type="email">
+            </div>
+            <div class="column">
 
+                <div class="input-box">
+                    <label>Número profissional</label>
+                    <input required="" placeholder="Insira um telefone" type="telephone">
+                </div>
+                <div class="input-box">
+                    <label>Data de Nascimento</label>
+                    <input required="" placeholder="Data de nascimento" type="date">
+                </div>
+            </div>
 
-<form class="form" action="/descricao" method="post">
-    <div class="flex">
-        @csrf
-        <label>
-            <p>Descrição</p>
-            <textarea required="" placeholder="Digite a descrição sobre seus serviços" type="text" class="input" name="nome"></textarea>
-        </label>
-        <button class="submit">Salvar</button>
+            </div>
+            <div class="input-box address">
+                <label>Região</label>
+                <input required="" placeholder="Insira o região de atuação" type="text">
+            </div>
+            </div>
+            <button>Submit</button>
+        </form>
+    </nav>
 
-</form>
+</section>
+
+<script>
+    function previewImage(event) {
+        const imagePreview = document.getElementById('imagePreview');
+        const preview = document.getElementById('preview');
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                imagePreview.style.display = 'block'; // Exibe a pré-visualização
+            }
+
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.style.display = 'none'; // Oculta a pré-visualização se não houver arquivo
+        }
+    }
+</script>
+
 
 @endsection

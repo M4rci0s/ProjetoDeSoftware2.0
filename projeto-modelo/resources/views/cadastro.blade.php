@@ -3,9 +3,20 @@
 @section('conteudo')
 
 <style>
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 75vh;
+        background-color: #030726;
+        /* Opcional, ajusta o fundo */
+    }
+
     .form {
         display: flex;
         flex-direction: column;
+
         gap: 10px;
         max-width: 338px;
         background-color: #fff;
@@ -17,7 +28,7 @@
 
     .title {
         font-size: 28px;
-        color: #35AD5E;
+        color: #030726;
         font-weight: 600;
         letter-spacing: -1px;
         position: relative;
@@ -34,13 +45,13 @@
         width: 16px;
         border-radius: 50%;
         left: 0px;
-        background-color: #35AD5E;
+        background-color: #030726;
     }
 
     .title::before {
         width: 18px;
         height: 18px;
-        background-color: #35AD5E;
+        background-color: #030726;
     }
 
     .title::after {
@@ -60,7 +71,7 @@
     }
 
     .signin a {
-        color: #35AD5E;
+        color: #030726;
     }
 
     .signin a:hover {
@@ -114,7 +125,7 @@
     .submit {
         border: none;
         outline: none;
-        background-color: #35AD5E;
+        background-color: #030726;
         padding: 10px;
         border-radius: 10px;
         color: #fff;
@@ -123,7 +134,8 @@
     }
 
     .submit:hover {
-        background-color: #35AD52;
+        background-color: #192059;
+        transition: 0.3s ease;
     }
 
     @keyframes pulse {
@@ -139,43 +151,45 @@
     }
 </style>
 
-<form class="form" action="/store" method="post">
-    <p class="title">Cadastro</p>
-    <p class="message">Cadastre-se para tornar-se parceiro</p>
-    <div class="flex">
-        @csrf
+<div class="container">
+    <form class="form" action="/store" method="post">
+        <p class="title">Cadastro</p>
+        <p class="message">Cadastre-se para tornar-se parceiro!</p>
+        <div class="flex">
+            @csrf
+            <label>
+                <input required="" placeholder="" type="text" class="input" name="name">
+                <span>Nome</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="text" class="input" name="sobrenome">
+                <span>Sobrenome</span>
+            </label>
+        </div>
+
         <label>
-            <input required="" placeholder="" type="text" class="input" name="name">
-            <span>Nome</span>
+            <input required="" placeholder="" type="email" class="input" name="email">
+            <span>Email</span>
+        </label>
+        <label>
+            <input required="" placeholder="" type="text" class="input" name="cpf">
+            <span>CPF</span>
         </label>
 
         <label>
-            <input required="" placeholder="" type="text" class="input" name="sobrenome">
-            <span>Sobrenome</span>
+            <input required="" placeholder="" type="password" class="input" name="senha">
+            <span>Senha</span>
         </label>
-    </div>
-
-    <label>
-        <input required="" placeholder="" type="email" class="input" name="email">
-        <span>Email</span>
-    </label>
-    <label>
-        <input required="" placeholder="" type="text" class="input" name="cpf">
-        <span>CPF</span>
-    </label>
-
-    <label>
-        <input required="" placeholder="" type="password" class="input" name="senha">
-        <span>Senha</span>
-    </label>
-    <label>
-        <input required="" placeholder="" type="password" class="input" name="senhaconf">
-        <span>Confirme a senha</span>
-    </label>
+        <label>
+            <input required="" placeholder="" type="password" class="input" name="senhaconf">
+            <span>Confirme a senha</span>
+        </label>
 
 
-    <button class="submit">Cadastrar</button>
-    <p class="signin">Possui uma conta ? <a href="#">Logar</a> </p>
-</form>
+        <button class="submit">Cadastrar</button>
+        <p class="signin">Possui uma conta ? <a href="#">Logar</a> </p>
+    </form>
+</div>
 
 @endsection

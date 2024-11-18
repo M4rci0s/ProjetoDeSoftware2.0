@@ -31,22 +31,13 @@
         justify-content: space-between;
     }
 
-    header {
-        background-color: #001A4D;
-        padding: 15px;
-    }
-
     header nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    header .logo {
-        font-size: 24px;
-        font-weight: bold;
-        color: white;
-    }
+
 
     header nav ul {
         list-style: none;
@@ -206,185 +197,6 @@
         text-decoration: none;
         font-size: 16px;
     }
-
-
-
-
-
-
-    footer {
-        background-color: #081590;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .footer-links {
-        display: flex;
-        gap: 20px;
-    }
-
-    .footer-links a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .footer-subscribe {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 20px;
-    }
-
-    .footer-subscribe input[type="email"] {
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        font-size: 16px;
-    }
-
-    .subscribe-button {
-        background-color: #427bff;
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-
-    .footer-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 20px;
-    }
-
-    .footer-links {
-        display: flex;
-        gap: 20px;
-        /* Espaçamento entre os links */
-        flex-wrap: wrap;
-        /* Permite que os links quebrem em linhas, se necessário */
-    }
-
-    .footer-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-    }
-
-    .footer-links a:hover {
-        text-decoration: underline;
-    }
-
-    .newsletter-container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        /* Aligns the block to the right */
-        margin-top: 20px;
-        /* Adjust as needed */
-        gap: 10px;
-    }
-
-    .newsletter-container p {
-        font-size: 16px;
-        margin-right: 10px;
-        /* Space between text and input field */
-    }
-
-    .newsletter-container input[type="email"] {
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        background-color: white;
-        color: #333;
-    }
-
-    .newsletter-container button {
-        padding: 10px 20px;
-        background-color: #3C60BA;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .newsletter-container button:hover {
-        background-color: #155bb5;
-    }
-
-    footer {
-        background-color: #081590;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        color: white;
-    }
-
-    hr {
-        border: 0;
-        border-top: 1px solid #fff;
-        margin: 20px 0;
-    }
-
-    .footer-bottom {
-        text-align: center;
-    }
-
-    .footer-nav {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        /* Espaçamento entre os links */
-        margin-bottom: 10px;
-    }
-
-    .footer-nav a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .footer-nav a:hover {
-        text-decoration: underline;
-    }
-
-    .faq-item {
-        background-color: #101A71;
-        padding: 15px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        width: 600px;
-    }
-
-    .faq-question {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .faq-answer {
-        display: none;
-        margin-top: 10px;
-        color: #ccc;
-        font-size: 16px;
-    }
-
-    .plus-icon {
-        font-size: 18px;
-        color: #fff;
-    }
 </style>
 
 
@@ -398,6 +210,7 @@
             <h1>Técnico não encontrado.</h1>
             @endif
             <form action="https://formsubmit.co/22202269@aluno.cotemig.com.br" method="POST">
+
 
 
                 <form action="#">
@@ -523,30 +336,7 @@
 
 
 
-    <footer>
-        <div class="footer-top">
-            <div class="footer-links">
-                <a href="#">Preciso de um técnico</a>
-                <a href="#">Trabalhe conosco</a>
-                <a href="#">Contato</a>
-                <a href="#">Quem Somos?</a>
-            </div>
-            <div class="newsletter-container">
-                <p>Se inscreva:</p>
-                <input type="email" placeholder="Enter your email">
-                <button>Cadastrar-se</button>
-            </div>
 
-        </div>
-        <hr>
-        <div class="footer-bottom">
-            <nav class="footer-nav">
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Termos de Uso</a>
-                <a href="#">Configuração dos Cookies</a>
-            </nav>
-        </div>
-    </footer>
 
     <script>
         function toggleAnswer(element) {

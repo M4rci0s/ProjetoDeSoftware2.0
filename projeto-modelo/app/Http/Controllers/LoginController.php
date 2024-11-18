@@ -33,6 +33,6 @@ class LoginController extends Controller
         // Se falhar a autenticação, retorna com erro
         return back()->withErrors([
             'email' => 'As credenciais fornecidas estão incorretas.',
-        ])->onlyInput('email');
+        ])->withInput($request->only('email'));
     }
 }

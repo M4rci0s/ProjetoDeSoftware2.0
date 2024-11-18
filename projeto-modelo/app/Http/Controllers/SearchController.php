@@ -14,7 +14,7 @@ class SearchController extends Controller
 
         // Se não houver uma consulta, retorne todos os técnicos
         if ($query) {
-            $valores = Cadastro::where('nome', 'LIKE', "%{$query}%")->get();
+            $valores = Cadastro::where('name', 'LIKE', "%{$query}%")->get();
         } else {
             $valores = Cadastro::all();
         }

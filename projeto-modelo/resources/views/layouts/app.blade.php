@@ -18,9 +18,7 @@
 
         body {
             width: 100%;
-            background-color: #35AD5E;
-
-
+            background-color: #030726;
         }
 
         h1 {
@@ -61,7 +59,7 @@
 
         /*Cabeçalho/Header*/
         .logo {
-            width: 14rem;
+            width: 100px;
         }
 
         #header {
@@ -69,7 +67,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 6px 80px;
-            background-color: #eaedf8;
+            background-color: #101A71;
             box-shadow: 0 5px 15px rgb(0, 0, 0, 0.06);
             z-index: 999;
             position: sticky;
@@ -93,14 +91,14 @@
             text-decoration: none;
             font-size: 16px;
             font-weight: 600;
-            color: #222222;
+            color: #fff;
             transition: 0.3s ease;
         }
 
         /*Fazer o highlight e underline do texto da página que está*/
         #navbar li a:hover,
         #navbar li a.active {
-            color: #35AD5E;
+            color: #fff;
         }
 
         /*Cria o underline*/
@@ -109,14 +107,14 @@
             content: "";
             width: 30%;
             height: 2px;
-            background-color: #35AD5E;
+            background-color: #fff;
             position: absolute;
             bottom: -4px;
             left: 20px;
         }
 
         #cadastre {
-            background-color: #35AD5E;
+            background-color: #3C60BA;
             color: #F7F7F7;
             border-radius: 14px;
             border: none;
@@ -130,7 +128,7 @@
         }
 
         #cadastre:hover {
-            background-color: #56b979;
+            background-color: #030726;
         }
 
         table {
@@ -155,9 +153,172 @@
             color: #B22222;
         }
 
-        .container {
-            padding-left: 5%;
-            padding-top: 2%;
+        footer {
+            background-color: #101A71;
+            /* Fundo do rodapé */
+            padding: 20px 0;
+            color: #fff;
+            margin-top: auto;
+            width: 100%;
+            /* Para o rodapé fixar no fim */
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            /* Espaçamento entre os links */
+            flex-wrap: wrap;
+            /* Permite que os links quebrem em linhas, se necessário */
+        }
+
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .subscribe {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .subscribe p {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .subscribe form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .subscribe input[type="email"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            width: 200px;
+        }
+
+        .subscribe button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .subscribe button:hover {
+            background-color: #0056b3;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #fff;
+            margin: 20px 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            /* Espaçamento entre os links */
+            margin-bottom: 10px;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-item {
+            background-color: #101A71;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            min-width: 90vh;
+        }
+
+
+
+        .faq-container {
+            padding-bottom: 50px;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            color: #ccc;
+            font-size: 10px;
+        }
+
+        .faq-answer p {
+            margin-top: 10px;
+            color: #ccc;
+            font-size: 10px;
+        }
+
+        .plus-icon {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        /* Estilizando a barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 12px;
+            /* Largura da barra de rolagem */
+            height: 12px;
+            /* Altura da barra de rolagem horizontal */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #1e3a8a;
+            /* Azul escuro para o 'polegar' */
+            border-radius: 10px;
+            /* Borda arredondada para o 'polegar' */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #add8e6;
+            /* Azul claro para a trilha da barra de rolagem */
+            border-radius: 10px;
+            /* Borda arredondada para a trilha */
+        }
+
+        ::-webkit-scrollbar-button {
+            display: none;
+            /* Esconde os botões da barra de rolagem */
         }
     </style>
 </head>
@@ -165,7 +326,7 @@
 <body>
     <header>
         <section id="header" class="section-p1">
-            <a href="#"><img src="emartech.pngJ" alt="Logo RemarTech" class="logo"></a>
+            <a href="#"><img src="logofind.png" alt="Logo RemarTech" class="logo"></a>
             <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -176,7 +337,7 @@
                     <li><a class="active" href="/">Inicio</a></li>
                     <li><a href="/tec">Preciso de um técnico</a></li>
                     <li><a href="trabalhe.html">Trabalhe conosco</a></li>
-                    <li><a href="upload">Contato</a></li>
+                    <li><a href="contatenos">Contato</a></li>
                     <li><a href="upload">Perfil</a></li>
                     <li><a href="login">Faça login</a></li>
                     <li><a href="/create"><button id="cadastre">Cadastre-se</button></a></li>
@@ -187,6 +348,26 @@
     <main class="container">
         @yield('conteudo')
     </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-links">
+                <a href="#">Preciso de um técnico</a>
+                <a href="#">Trabalhe conosco</a>
+                <a href="#">Contato</a>
+                <a href="#">Quem Somos?</a>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <nav class="footer-nav">
+                <a href="#">Política de Privacidade</a>
+                <a href="/termos-de-uso">Termos de Uso</a>
+                <a href="#">Configuração dos Cookies</a>
+            </nav>
+        </div>
+    </footer>
+
 </body>
 
 </html>
