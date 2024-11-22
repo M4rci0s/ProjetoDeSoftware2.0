@@ -482,84 +482,12 @@
     <div class="container">
         <button class="ver-mais">Ver Mais</button>
         <div class="convite-texto">
-            <h2>Faça parte da RemarTech como Técnico</h2>
+            <h2>Faça parte da FindTech como Técnico</h2>
             <a href="#" class="cadastre-se">Cadastre-se</a>
         </div>
     </div>
 </section>
 
-<div class="faq-container">
-    <div class="faq-title">
-        <h2>Dúvidas?</h2>
-        <p>Para qualquer dúvida, <a href="link-de-contato.html">contate-nos</a>.</p>
-    </div>
 
-    <div class="faq-list">
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleAnswer(this)">
-                <span>A RemarTech é segura?</span>
-                <span class="plus-icon">+</span>
-            </div>
-            <div class="faq-answer" style="color: #fff;">
-                <p style="color: #fff;">Sim, a RemarTech oferece diversas garantias para que todos os serviços sejam realizados com segurança e qualidade.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleAnswer(this)">
-                <span>Quais tipos de serviço posso encontrar na RemarTech?</span>
-                <span class="plus-icon">+</span>
-            </div>
-            <div class="faq-answer" style="color: #fff;">
-                <p style="color: #fff;">Na RemarTech, você encontra uma variedade de serviços que atendem diferentes necessidades, incluindo suporte técnico, manutenção e muito mais.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleAnswer(this)">
-                <span>Como posso encontrar um técnico na RemarTech?</span>
-                <span class="plus-icon">+</span>
-            </div>
-            <div class="faq-answer" style="color: #fff;">
-                <p style="color: #fff;">Você pode encontrar um técnico utilizando a nossa ferramenta de busca na plataforma. Basta inserir sua localização e o tipo de serviço que precisa.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleAnswer(this)">
-                <span>Qual o custo de ser um parceiro da RemarTech?</span>
-                <span class="plus-icon">+</span>
-            </div>
-            <div class="faq-answer" style="color: #fff;">
-                <p style="color: #fff;">O custo para ser um parceiro da RemarTech depende do tipo de parceria. Para mais detalhes, recomendamos entrar em contato conosco.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleAnswer(this)">
-                <span>Há serviços em domicílio?</span>
-                <span class="plus-icon">+</span>
-            </div>
-            <div class="faq-answer" style="color: #fff;">
-                <p style="color: #fff;">Sim, a RemarTech oferece serviços em domicílio para várias categorias, facilitando o atendimento em sua casa ou empresa.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<script>
-    function toggleAnswer(element) {
-        const answer = element.nextElementSibling;
-        const icon = element.querySelector('.plus-icon');
-
-        // Toggle the visibility of the answer
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-
-        // Toggle the icon between "+" e "-"
-        icon.textContent = icon.textContent === '+' ? '-' : '+';
-    }
-</script>
 
 @endsection

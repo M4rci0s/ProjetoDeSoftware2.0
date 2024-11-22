@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RemarTech</title>
+    <title>FindTech</title>
 
     <style>
         @import url('https://fonts.cdnfonts.com/css/spartan');
@@ -264,10 +264,30 @@
             min-width: 90vh;
         }
 
+        .faq-container {
+            margin: 0 auto;
+            /* Centraliza horizontalmente */
+            text-align: center;
+            /* Centraliza o texto interno (opcional) */
+            width: 100%;
+            max-width: 90vh;
+            /* Define a largura máxima para o conteúdo */
+            padding: 20px;
+            /* Adiciona um espaço interno */
+            box-sizing: border-box;
+            /* Inclui o padding dentro da largura */
+        }
+
+        .faq-title h2,
+        p {
+            color: #fff;
+        }
 
 
         .faq-container {
             padding-bottom: 50px;
+            width: 90vh;
+            align-items: center;
         }
 
         .faq-question {
@@ -279,18 +299,22 @@
         .faq-answer {
             display: none;
             margin-top: 10px;
-            color: #ccc;
+            color: #fff;
             font-size: 10px;
         }
 
         .faq-answer p {
             margin-top: 10px;
-            color: #ccc;
+            color: #fff;
             font-size: 10px;
         }
 
         .plus-icon {
             font-size: 18px;
+            color: #fff;
+        }
+
+        .textduvida {
             color: #fff;
         }
 
@@ -326,7 +350,7 @@
 <body>
     <header>
         <section id="header" class="section-p1">
-            <a href="#"><img src="logofind.png" alt="Logo RemarTech" class="logo"></a>
+            <a href="#"><img src="logofind.png" alt="Logo FindTech" class="logo"></a>
             <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -336,7 +360,6 @@
                 <ul id="navbar">
                     <li><a class="active" href="/">Inicio</a></li>
                     <li><a href="/tec">Preciso de um técnico</a></li>
-                    <li><a href="trabalhe.html">Trabalhe conosco</a></li>
                     <li><a href="contatenos">Contato</a></li>
                     <li><a href="upload">Perfil</a></li>
                     <li><a href="login">Faça login</a></li>
@@ -348,6 +371,79 @@
     <main class="container">
         @yield('conteudo')
     </main>
+    <div class="faq-container">
+        <div class="faq-title">
+            <h2>Dúvidas?</h2>
+            <p>Para qualquer dúvida, <a href="link-de-contato.html">contate-nos</a>.</p>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="textduvida">A FindTech é segura?</span>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="faq-answer" style="color: #fff;">
+                    <p style="color: #fff;">Sim, a FindTech oferece diversas garantias para que todos os serviços sejam realizados com segurança e qualidade.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="textduvida">Quais tipos de serviço posso encontrar na FindTech?</span>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="faq-answer" style="color: #fff;">
+                    <p style="color: #fff;">Na FindTech, você encontra uma variedade de serviços que atendem diferentes necessidades, incluindo suporte técnico, manutenção e muito mais.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="textduvida">Como posso encontrar um técnico na FindTech?</span>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="faq-answer" style="color: #fff;">
+                    <p style="color: #fff;">Você pode encontrar um técnico utilizando a nossa ferramenta de busca na plataforma. Basta inserir sua localização e o tipo de serviço que precisa.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="textduvida">Qual o custo de ser um parceiro da FindTech?</span>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="faq-answer" style="color: #fff;">
+                    <p style="color: #fff;">O custo para ser um parceiro da FindTech depende do tipo de parceria. Para mais detalhes, recomendamos entrar em contato conosco.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="textduvida">Há serviços em domicílio?</span>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="faq-answer" style="color: #fff;">
+                    <p style="color: #fff;">Sim, a FindTech oferece serviços em domicílio para várias categorias, facilitando o atendimento em sua casa ou empresa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.plus-icon');
+
+            // Toggle the visibility of the answer
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+
+            // Toggle the icon between "+" e "-"
+            icon.textContent = icon.textContent === '+' ? '-' : '+';
+        }
+    </script>
 
     <footer>
         <div class="footer-top">
