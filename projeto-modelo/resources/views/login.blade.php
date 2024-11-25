@@ -160,7 +160,7 @@
             </label>
 
             <button class="submit">Login</button>
-            <p class="signin">Não possui uma conta ? <a href="#">Cadastrar</a> </p>
+            <p class="signin">Não possui uma conta ? <a href="/create">Cadastrar</a> </p>
 
     </div>
     @endsection

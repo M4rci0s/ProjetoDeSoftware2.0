@@ -118,9 +118,7 @@
         font-weight: 600;
     }
 
-    .form label .input:valid+span {
-        color: green;
-    }
+
 
     .submit {
         border: none;
@@ -152,44 +150,137 @@
 </style>
 
 <div class="container">
-    <form class="form" action="/store" method="post">
+    <form class="form" action="/store" method="post" id="formCadastro">
         <p class="title">Cadastro</p>
         <p class="message">Cadastre-se para tornar-se parceiro!</p>
         <div class="flex">
             @csrf
             <label>
-                <input required="" placeholder="" type="text" class="input" name="name">
+                <input required="" placeholder="" type="text" class="input" name="name" id="name">
                 <span>Nome</span>
             </label>
 
             <label>
-                <input required="" placeholder="" type="text" class="input" name="sobrenome">
+                <input required="" placeholder="" type="text" class="input" name="sobrenome" id="sobrenome">
                 <span>Sobrenome</span>
             </label>
         </div>
 
         <label>
-            <input required="" placeholder="" type="email" class="input" name="email">
+            <input required="" placeholder="" type="email" class="input" name="email" id="email">
             <span>Email</span>
         </label>
         <label>
-            <input required="" placeholder="" type="text" class="input" name="cpf">
+            <input required="" placeholder="" type="text" class="input" name="cpf" id="cpf" maxlength="14">
             <span>CPF</span>
         </label>
 
         <label>
-            <input required="" placeholder="" type="password" class="input" name="senha">
+            <input required="" placeholder="" type="password" class="input" name="senha" id="senha">
             <span>Senha</span>
         </label>
         <label>
-            <input required="" placeholder="" type="password" class="input" name="senhaconf">
+            <input required="" placeholder="" type="password" class="input" name="senhaconf" id="senhaconf">
             <span>Confirme a senha</span>
         </label>
 
 
         <button class="submit">Cadastrar</button>
-        <p class="signin">Possui uma conta ? <a href="#">Logar</a> </p>
+        <p class="signin">Possui uma conta ? <a href="login">Logar</a> </p>
     </form>
 </div>
+<script>
+    function formatarCPF(cpf) {
+        // Remove todos os caracteres não numéricos
+        cpf = cpf.replace(/\D/g, '');
 
+        // Formata o CPF
+        if (cpf.length <= 3) {
+            return cpf;
+        } else if (cpf.length <= 6) {
+            return cpf.replace(/(\d{3})(\d+)/, '$1.$2');
+        } else if (cpf.length <= 9) {
+            return cpf.replace(/(\d{3})(\d{3})(\d+)/, '$1.$2.$3');
+        } else {
+            return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, '$1.$2.$3-$4');
+        }
+    }
+
+    document.getElementById('cpf').addEventListener('input', function(event) {
+        const input = event.target;
+        const formattedCPF = formatarCPF(input.value);
+        input.value = formattedCPF;
+    });
+    document.getElementById('cpf').addEventListener('input', function(event) {
+        const input = event.target;
+        const formattedCPF = formatarCPF(input.value);
+        input.value = formattedCPF;
+    });
+
+    function validarCPF(cpf) {
+        cpf = cpf.replace(/[^\d]+/g, '');
+
+        if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+            return false;
+        }
+
+        let soma = 0;
+        for (let i = 0; i < 9; i++) {
+            soma += parseInt(cpf.charAt(i)) * (10 - i);
+        }
+        let primeiroDigito = 11 - (soma % 11);
+        primeiroDigito = primeiroDigito >= 10 ? 0 : primeiroDigito;
+
+        if (parseInt(cpf.charAt(9)) !== primeiroDigito) {
+            return false;
+        }
+
+        soma = 0;
+        for (let i = 0; i < 10; i++) {
+            soma += parseInt(cpf.charAt(i)) * (11 - i);
+        }
+        let segundoDigito = 11 - (soma % 11);
+        segundoDigito = segundoDigito >= 10 ? 0 : segundoDigito;
+
+        return parseInt(cpf.charAt(10)) === segundoDigito;
+    }
+
+    document.getElementById('formCadastro').addEventListener('submit', function(event) {
+        const nome = document.getElementById('name').value;
+        const sobrenome = document.getElementById('sobrenome').value;
+        const email = document.getElementById('email').value;
+        const cpfInput = document.getElementById('cpf').value;
+        const senha = document.getElementById('senha').value;
+        const senhaConf = document.getElementById('senhaconf').value;
+
+        // Validação de Email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            event.preventDefault();
+            alert('Por favor, insira um email válido.');
+            return;
+        }
+
+        // Validação de CPF
+        if (!validarCPF(cpfInput)) {
+            event.preventDefault();
+            alert('CPF inválido. Por favor, insira um CPF válido.');
+            return;
+        }
+
+        // Validação de Senha
+        if (senha.length < 6) {
+            event.preventDefault();
+            alert('A senha deve ter pelo menos 6 caracteres.');
+            return;
+        }
+
+        // Validação de Confirmação de Senha
+        if (senha !== senhaConf) {
+            event.preventDefault();
+            alert('As senhas não coincidem. Por favor, tente novamente.');
+            return;
+        }
+    });
+</script>
 @endsection

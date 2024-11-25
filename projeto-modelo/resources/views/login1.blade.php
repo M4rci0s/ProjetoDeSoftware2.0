@@ -177,7 +177,7 @@
                 <span>Senha</span>
             </label>
             <button class="submit">Entrar</button>
-            <p class="signin">Não possui conta? <a href="#">Cadastre-se</a> </p>
+            <p class="signin">Não possui conta? <a href="/create">Cadastre-se</a> </p>
 
 
         </form>

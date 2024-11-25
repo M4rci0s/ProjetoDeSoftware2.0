@@ -448,8 +448,7 @@
     <footer>
         <div class="footer-top">
             <div class="footer-links">
-                <a href="#">Preciso de um técnico</a>
-                <a href="#">Trabalhe conosco</a>
+                <a href="/tec">Preciso de um técnico</a>
                 <a href="#">Contato</a>
                 <a href="#">Quem Somos?</a>
             </div>

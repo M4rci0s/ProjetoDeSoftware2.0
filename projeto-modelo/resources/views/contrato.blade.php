@@ -268,7 +268,7 @@
             <div class="location-info">
                 <h2>Localização</h2>
                 <p>Endereço</p>
-                <img src="" alt="Mapa da localização">
+                <img src="" alt="Região Barreiro">
             </div>
         </aside>
     </div>

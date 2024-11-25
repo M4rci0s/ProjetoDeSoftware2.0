@@ -117,7 +117,7 @@
 <section class="container">
     <nav class="formulario">
         <h4>Editar perfil</h4>
-        <form class="form" action="POST">
+        <form class="form" action="POST" onsubmit="return validateForm()">
 
             <div class="input-box">
                 <label>Foto de Perfil</label>
@@ -131,31 +131,31 @@
 
             <div class="input-box">
                 <label>Nome e Sobrenome</label>
-                <input required="" placeholder="Digite o Nome completo" type="text">
+                <input required="" placeholder="Digite o Nome completo" type="text" id="fullname">
             </div>
             <div class="input-box">
                 <label>Email profissional</label>
-                <input required="" placeholder="Insira um email" type="email">
+                <input required="" placeholder="Insira um email" type="email" id="email">
             </div>
             <div class="column">
 
                 <div class="input-box">
                     <label>Número profissional</label>
-                    <input required="" placeholder="Insira um telefone" type="telephone">
+                    <input required="" oninput="formatPhone(this)" placeholder="Insira um telefone" type="tel" id="phone" maxlength="15">
                 </div>
                 <div class="input-box">
                     <label>Data de Nascimento</label>
-                    <input required="" placeholder="Data de nascimento" type="date">
+                    <input required="" placeholder="Data de nascimento" type="date" id="birthdate">
                 </div>
             </div>
 
             </div>
             <div class="input-box address">
                 <label>Região</label>
-                <input required="" placeholder="Insira o região de atuação" type="text">
+                <input required="" placeholder="Insira o região de atuação" type="text" id="region">
             </div>
             </div>
-            <button>Submit</button>
+            <button>Editar e Salvar</button>
         </form>
     </nav>
 
@@ -179,6 +179,34 @@
         } else {
             imagePreview.style.display = 'none'; // Oculta a pré-visualização se não houver arquivo
         }
+    }
+
+    function formatPhone(input) {
+        // Remove todos os caracteres não numéricos
+        let value = input.value.replace(/\D/g, '');
+
+        // Formata o número no padrão (XX) XXXXX-XXXX ou (XX) XXXX-XXXX
+        if (value.length <= 10) {
+            value = value.replace(/(\d{2})(\d{4})(\d+)/, '($1) $2-$3');
+        } else {
+            value = value.replace(/(\d{2})(\d{5})(\d+)/, '($1) $2-$3');
+        }
+
+        input.value = value;
+    }
+
+    function validateForm() {
+
+        const birthdateInput = document.getElementById('birthdate');
+        // Validate birthdate
+        const birthdate = new Date(birthdateInput.value);
+        const today = new Date();
+        if (birthdate >= today) {
+            alert('A data de nascimento não pode ser uma data futura.');
+            return false;
+        }
+
+        return true; // Allow form submission
     }
 </script>
 

@@ -274,6 +274,11 @@
     .mobile-menu.active .line3 {
         transform: rotate(45deg) translate(-5px, -7px);
     }
+
+    .atecs {
+        color: #fff;
+        text-decoration: none;
+    }
 </style>
 
 <section id="banner" class="section-p1">
@@ -283,7 +288,7 @@
     <p>Deixe seus dispositivos nas mãos certas!
         Contate nossos técnicos para o serviço que necessita.
     </p>
-    <button class="button1">Encontrar um técnico</button>
+    <a href="/tec" class="atecs"><button class="button1">Encontrar um técnico</button></a>
 </section>
 
 <section id="maisbuscados" class="section-p1">
@@ -291,56 +296,67 @@
     <p class="subtext">E mais realizados</p>
     <div class="pro-container">
         <div class="pro">
-            <img src="reparosdedispositivos.png" alt="">
-            <div class="des">
-                <h5>Reparo de dispositivos</h5>
-                <span>Consertar computadores quebrados
-                    e substituir componentes defeituosos.</span>
-            </div>
+            <a href="/tec" class="atecs"><img src="reparosdedispositivos.png" alt="">
+                <div class="des">
+                    <h5>Reparo de dispositivos</h5>
+                    <span>Consertar computadores quebrados
+                        e substituir componentes defeituosos.</span>
+                </div>
         </div>
-        <div class="pro">
-            <img src="configuracaorede.png" alt="">
-            <div class="des">
-                <h5>Configuração de rede</h5>
-                <span> Configurar redes locais (LANs),
-                    redes sem fio (Wi-Fi), roteadores e switches.</span>
+        </a>
+        <a href="/tec" class="atecs">
+            <div class="pro">
+                <img src="configuracaorede.png" alt="">
+                <div class="des">
+                    <h5>Configuração de rede</h5>
+                    <span> Configurar redes locais (LANs),
+                        redes sem fio (Wi-Fi), roteadores e switches.</span>
+                </div>
             </div>
-        </div>
-        <div class="pro">
-            <img src="virus.png" alt="">
-            <div class="des">
-                <h5>Remoção de virus e malware</h5>
-                <span>Escanear e limpar sistemas infectados por
-                    vírus, spyware, adware e outros tipos de malware.</span>
+        </a>
+        <a href="/tec" class="atecs">
+            <div class="pro">
+                <img src="virus.png" alt="">
+                <div class="des">
+                    <h5>Remoção de virus e malware</h5>
+                    <span>Escanear e limpar sistemas infectados por
+                        vírus, spyware, adware e outros tipos de malware.</span>
+                </div>
             </div>
-        </div>
+        </a>
 
-        <div class="pro">
-            <img src="preventivo.png" alt="">
-            <div class="des">
-                <h5>Manutenção preventiva</h5>
-                <span> Antecipação de problemas através de inspeções
-                    regulares e ações corretivas para evitar falhas e maximizar
-                    o desempenho.</span>
+        <a href="/tec" class="atecs">
+            <div class="pro">
+                <img src="preventivo.png" alt="">
+                <div class="des">
+                    <h5>Manutenção preventiva</h5>
+                    <span> Antecipação de problemas através de inspeções
+                        regulares e ações corretivas para evitar falhas e maximizar
+                        o desempenho.</span>
+                </div>
             </div>
-        </div>
-        <div class="pro">
-            <img src="atualizacao.png" alt="">
-            <div class="des">
-                <h5>Atualização e otimização do sistema</h5>
-                <span> Garantir que os sistemas estejam atualizados com as
-                    últimas atualizações de segurança e otimizar o desempenho
-                    do sistema</span>
+        </a>
+        <a href="/tec" class="atecs">
+            <div class="pro">
+                <img src="atualizacao.png" alt="">
+                <div class="des">
+                    <h5>Atualização e otimização do sistema</h5>
+                    <span> Garantir que os sistemas estejam atualizados com as
+                        últimas atualizações de segurança e otimizar o desempenho
+                        do sistema</span>
+                </div>
             </div>
-        </div>
-        <div class="pro">
-            <img src="software.png" alt="">
-            <div class="des">
-                <h5>Instalação de software</h5>
-                <span>Instalar e configurar sistemas operacionais,
-                    programas de software, drivers e atualizações.</span>
+        </a>
+        <a href="/tec" class="atecs">
+            <div class="pro">
+                <img src="software.png" alt="">
+                <div class="des">
+                    <h5>Instalação de software</h5>
+                    <span>Instalar e configurar sistemas operacionais,
+                        programas de software, drivers e atualizações.</span>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 </section>
 
