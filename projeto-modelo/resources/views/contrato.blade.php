@@ -273,4 +273,27 @@
         </aside>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const telefoneInput = document.getElementById('telefone');
+
+            telefoneInput.addEventListener('input', function() {
+                // Remove todos os caracteres que não são dígitos
+                let telefone = this.value.replace(/\D/g, '');
+
+                // Formata o telefone
+                if (telefone.length > 6) {
+                    telefone = telefone.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3'); // Formato: (xx) xxxxx-xxxx
+                } else if (telefone.length > 2) {
+                    telefone = telefone.replace(/^(\d{2})(\d{4})(\d{4})$/, '($1) $2-$3'); // Formato: (xx) xxxx-xxxx
+                } else if (telefone.length > 1) {
+                    telefone = telefone.replace(/^(\d{2})(\d{1,5})$/, '($1) $2'); // Formato: (xx) xxxxx
+                } else if (telefone.length > 0) {
+                    telefone = telefone.replace(/^(\d{2})$/, '($1) '); // Formato: (xx)
+                }
+
+                this.value = telefone;
+            });
+        });
+    </script>
     @endsection

@@ -350,7 +350,7 @@
 <body>
     <header>
         <section id="header" class="section-p1">
-            <a href="#"><img src="logofind.png" alt="Logo FindTech" class="logo"></a>
+            <a href="/"><img src="logofind.png" alt="Logo FindTech" class="logo"></a>
             <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
