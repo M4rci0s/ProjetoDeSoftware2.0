@@ -149,6 +149,23 @@
             opacity: 0;
         }
     }
+
+    #link-topo {
+        text-decoration: none;
+        color: #eaedf8;
+        background-color: #3C60BA;
+        padding: 14px;
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 20%;
+        font-size: 14px;
+        transition: 0.5s;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
 </style>
 <div class="container">
 
@@ -184,5 +201,5 @@
     </div>
 </div>
 
-
+<a href="#" id="link-topo">&#9650</a>
 @endsection

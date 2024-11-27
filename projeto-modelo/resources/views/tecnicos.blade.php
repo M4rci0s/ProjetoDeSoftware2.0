@@ -398,6 +398,23 @@
         background-color: #0056b3;
     }
 
+    #link-topo {
+        text-decoration: none;
+        color: #eaedf8;
+        background-color: #3C60BA;
+        padding: 14px;
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 20%;
+        font-size: 14px;
+        transition: 0.5s;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
     /* Estilos do Rodapé */
 </style>
 
@@ -483,11 +500,11 @@
         <button class="ver-mais">Ver Mais</button>
         <div class="convite-texto">
             <h2>Faça parte da FindTech como Técnico</h2>
-            <a href="#" class="cadastre-se">Cadastre-se</a>
+            <a href="/create" class="cadastre-se">Cadastre-se</a>
         </div>
     </div>
 </section>
 
 
-
+<a href="#" id="link-topo">&#9650</a>
 @endsection
